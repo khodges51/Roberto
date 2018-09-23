@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[Tweet]
+(
+	[StatusId] BIGINT NOT NULL PRIMARY KEY, 
+    [Text] NVARCHAR(500) NOT NULL, 
+    [UserName] NVARCHAR(50) NOT NULL, 
+    [DateTimeRead] DATETIME2 NOT NULL DEFAULT GETDATE(), 
+    [CreatedAt] DATETIME2 NOT NULL
+)
