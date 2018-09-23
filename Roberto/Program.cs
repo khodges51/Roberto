@@ -10,26 +10,13 @@ namespace Roberto
     {
         public static async Task Main(string[] args)
         {
-            IAuthorizer auth = DoSingleUserAuth();
+            IAuthorizer auth = Secrets.DoSingleUserAuth();
 
             await auth.AuthorizeAsync();
 
             var twitterCtx = new TwitterContext(auth);
 
             await ReadTimeLine(twitterCtx);
-        }
-
-        static IAuthorizer DoSingleUserAuth()
-        {
-            var auth = new SingleUserAuthorizer
-            {
-                CredentialStore = new SingleUserInMemoryCredentialStore
-                {
-                    //Todo
-                }
-            };
-
-            return auth;
         }
 
         static async Task ReadTimeLine(TwitterContext twitterCtx)
