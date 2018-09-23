@@ -61,4 +61,7 @@
   <ItemGroup>
     <Build Include="Tweet.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="roberto_db.publish.xml" />
+  </ItemGroup>
 </Project>
