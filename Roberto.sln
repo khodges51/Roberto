@@ -4,8 +4,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Roberto", "Roberto\Roberto.csproj", "{08A7C273-D09E-4BAD-BCF3-E8C909E1B303}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A881D0A3-72AD-43B1-BC07-F19FEA3BC277} = {A881D0A3-72AD-43B1-BC07-F19FEA3BC277}
+	EndProjectSection
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "roberto_db", "roberto_db\roberto_db.sqlproj", "{8BED1580-B954-4181-8F4E-2F985B8A7A5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datastore", "Datastore\Datastore.csproj", "{A881D0A3-72AD-43B1-BC07-F19FEA3BC277}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +28,10 @@ Global
 		{8BED1580-B954-4181-8F4E-2F985B8A7A5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BED1580-B954-4181-8F4E-2F985B8A7A5C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8BED1580-B954-4181-8F4E-2F985B8A7A5C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A881D0A3-72AD-43B1-BC07-F19FEA3BC277}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A881D0A3-72AD-43B1-BC07-F19FEA3BC277}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A881D0A3-72AD-43B1-BC07-F19FEA3BC277}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A881D0A3-72AD-43B1-BC07-F19FEA3BC277}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
