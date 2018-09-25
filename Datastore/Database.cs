@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Dapper;
 using Dapper.Contrib.Extensions;
 
-namespace Replen.DataStore
+namespace Roberto.DataStore
 {
     public class Database : IDatabase
     {

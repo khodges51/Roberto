@@ -21,6 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Datastore\Datastore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="LinqToTwitter.AspNetCore">
       <HintPath>..\..\..\..\..\src\LinqToTwitter\LinqToTwitter.AspNetCore\bin\Debug\netstandard2.0\LinqToTwitter.AspNetCore.dll</HintPath>
     </Reference>

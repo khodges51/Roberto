@@ -3,14 +3,19 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Linq;
+using Roberto.DataStore;
 
 namespace Roberto
 {
     class Program
     {
+
+        private static IDatabase _database;
+
         public static async Task Main(string[] args)
         {
             IAuthorizer auth = Secrets.DoSingleUserAuth();
+            _database = new Database(Secrets.ConnectionString);
 
             await auth.AuthorizeAsync();
 

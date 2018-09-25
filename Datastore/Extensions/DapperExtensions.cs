@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Dapper.Contrib.Extensions;
 
-namespace Replen.DataStore.Extentions
+namespace Roberto.DataStore.Extentions
 {
     public static class DapperExtentions
     {
