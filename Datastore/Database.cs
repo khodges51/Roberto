@@ -15,6 +15,7 @@ namespace Roberto.DataStore
         public Database(string connectionString)
         {
             this._connectionString = connectionString;
+            SetupDefaults();
         }
 
         public static void SetupDefaults()

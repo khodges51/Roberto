@@ -4,6 +4,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Linq;
 using Roberto.DataStore;
+using Roberto.Datastore.Models;
+using Datastore.Commands;
+using Roberto.Datastore.Queries;
 
 namespace Roberto
 {
@@ -35,12 +38,18 @@ namespace Roberto
                  select tweet)
                 .ToListAsync();
 
-            var tweetContents = tweets.Select(tweet => new TweetModel {
-                StatusId = tweet.StatusID,
+            var tweetContents = tweets.Select(tweet => new Tweet {
+                StatusId = (long)tweet.StatusID,
                 Text = tweet.FullText,
                 UserName = tweet.User.Name,
                 CreatedAt = tweet.CreatedAt
             });
+
+            var mostRecentStatusIds = await _database.QueryAsync(new GetMostRecentStatusIds());
+
+            var tweetsToUpsert = tweetContents.Where(tweet => !mostRecentStatusIds.Contains(tweet.StatusId));
+
+            await _database.CommandAsync(new UpsertTweets(tweetsToUpsert));
 
             return;
         }
