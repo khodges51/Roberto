@@ -15,7 +15,7 @@ namespace Roberto.HostedServices
         {
         }
 
-        protected override string Schedule => "* */4 * * *"; //Runs every X minutes
+        protected override string Schedule => "* */4 * * *"; //Runs every X hours
 
         public override Task ProcessInScope(IServiceProvider serviceProvider)
         {
