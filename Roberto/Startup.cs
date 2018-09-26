@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Roberto.Services;
+using Microsoft.Extensions.Hosting;
+using Roberto.HostedServices;
 
 namespace Roberto
 {
@@ -22,6 +24,7 @@ namespace Roberto
             services.AddScoped<IDatabase, Database>(d => new Database(Secrets.ConnectionString));
             services.AddScoped<ITwitterAuthService, TwitterAuthService>();
             services.AddScoped<ITweetService, TweetService>();
+            services.AddSingleton<IHostedService, TweetTask>();
         }
 
         public void Configure(IApplicationBuilder app, IApplicationLifetime appLifetime)
